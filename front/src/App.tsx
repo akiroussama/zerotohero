@@ -1,34 +1,51 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
+import { useState } from 'react';
+import LoginForm from './components/LoginForm';
+import Welcome from './components/Welcome';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [isAuthed, setIsAuthed] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
+  const [username, setUsername] = useState('');
+
+  const handleLogin = async (creds: { username: string; password: string }) => {
+    try {
+      setErrorMessage('');
+      const res = await fetch('/auth', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(creds),
+      });
+      if (res.status === 200) {
+        setIsAuthed(true);
+        setUsername(creds.username);
+      } else {
+        if (res.status === 401) {
+          const { message } = await res.json();
+          setErrorMessage(message);
+        } else {
+          throw Error(`error during auth, status code: ${res.status}`);
+        }
+      }
+    } catch (e) {
+      console.error(e);
+    }
+  };
 
   return (
-    <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+    <div className="lg:container lg mx-auto m-10">
+      {isAuthed ? (
+        <Welcome
+          username={username}
+          onLogout={() => {
+            setIsAuthed(false);
+            setUsername('');
+          }}
+        />
+      ) : (
+        <LoginForm onLogin={handleLogin} errorMessage={errorMessage} />
+      )}
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
