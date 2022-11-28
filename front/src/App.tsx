@@ -1,18 +1,18 @@
-import { useState } from 'react';
-import LoginForm from './components/LoginForm';
-import Welcome from './components/Welcome';
+import { useState } from "react";
+import LoginForm from "./components/LoginForm";
+import Welcome from "./components/Welcome";
 
 function App() {
   const [isAuthed, setIsAuthed] = useState(false);
-  const [errorMessage, setErrorMessage] = useState('');
-  const [username, setUsername] = useState('');
+  const [errorMessage, setErrorMessage] = useState("");
+  const [username, setUsername] = useState("");
 
   const handleLogin = async (creds: { username: string; password: string }) => {
     try {
-      setErrorMessage('');
-      const res = await fetch('/auth', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+      setErrorMessage("");
+      const res = await fetch("/auth", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(creds),
       });
       if (res.status === 200) {
@@ -38,7 +38,7 @@ function App() {
           username={username}
           onLogout={() => {
             setIsAuthed(false);
-            setUsername('');
+            setUsername("");
           }}
         />
       ) : (

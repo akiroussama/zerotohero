@@ -1,26 +1,30 @@
 {
-    "sourceFile": "package.json",
-    "activeCommit": 0,
-    "commits": [
+  "sourceFile": "package.json",
+  "activeCommit": 0,
+  "commits": [
+    {
+      "activePatchIndex": 3,
+      "patches": [
         {
-            "activePatchIndex": 2,
-            "patches": [
-                {
-                    "date": 1669635453353,
-                    "content": "Index: \n===================================================================\n--- \n+++ \n"
-                },
-                {
-                    "date": 1669638399944,
-                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n     \"format\": \"prettier --write .\",\r\n     \"lint\": \"eslint --cache --cache-location ./node_modules/.cache/eslint .\"\r\n   },\r\n   \"dependencies\": {\r\n-    \"msw\": \"^0.44.2\",\r\n+    \"@cypress/mount-utils\": \"^3.0.0\",\r\n     \"react\": \"^18.0.0\",\r\n     \"react-dom\": \"^18.0.0\"\r\n   },\r\n   \"devDependencies\": {\r\n"
-                },
-                {
-                    "date": 1669638406413,
-                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,6 @@\n     \"prettier\": \"2.7.1\",\r\n     \"tailwindcss\": \"^3.0.24\",\r\n     \"typescript\": \"^4.6.4\",\r\n     \"vite\": \"^3.0.0\"\r\n-  },\r\n-  \"msw\": {\r\n-    \"workerDirectory\": \".\"\r\n   }\r\n }\r\n"
-                }
-            ],
-            "date": 1669635453353,
-            "name": "Commit-0",
-            "content": "{\r\n  \"name\": \"front\",\r\n  \"private\": true,\r\n  \"version\": \"0.0.0\",\r\n  \"scripts\": {\r\n    \"dev\": \"vite\",\r\n    \"build\": \"tsc && vite build\",\r\n    \"preview\": \"vite preview\",\r\n    \"format\": \"prettier --write .\",\r\n    \"lint\": \"eslint --cache --cache-location ./node_modules/.cache/eslint .\"\r\n  },\r\n  \"dependencies\": {\r\n    \"msw\": \"^0.44.2\",\r\n    \"react\": \"^18.0.0\",\r\n    \"react-dom\": \"^18.0.0\"\r\n  },\r\n  \"devDependencies\": {\r\n    \"@types/react\": \"^18.0.15\",\r\n    \"@types/react-dom\": \"^18.0.6\",\r\n    \"@typescript-eslint/eslint-plugin\": \"^5.32.0\",\r\n    \"@typescript-eslint/parser\": \"^5.32.0\",\r\n    \"@vitejs/plugin-react\": \"^2.0.0\",\r\n    \"autoprefixer\": \"^10.4.4\",\r\n    \"cypress\": \"^10.0.0\",\r\n    \"eslint\": \"^8.21.0\",\r\n    \"eslint-plugin-react\": \"^7.30.1\",\r\n    \"postcss\": \"^8.4.12\",\r\n    \"prettier\": \"2.7.1\",\r\n    \"tailwindcss\": \"^3.0.24\",\r\n    \"typescript\": \"^4.6.4\",\r\n    \"vite\": \"^3.0.0\"\r\n  },\r\n  \"msw\": {\r\n    \"workerDirectory\": \".\"\r\n  }\r\n}\r\n"
+          "date": 1669635453353,
+          "content": "Index: \n===================================================================\n--- \n+++ \n"
+        },
+        {
+          "date": 1669638399944,
+          "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n     \"format\": \"prettier --write .\",\r\n     \"lint\": \"eslint --cache --cache-location ./node_modules/.cache/eslint .\"\r\n   },\r\n   \"dependencies\": {\r\n-    \"msw\": \"^0.44.2\",\r\n+    \"@cypress/mount-utils\": \"^3.0.0\",\r\n     \"react\": \"^18.0.0\",\r\n     \"react-dom\": \"^18.0.0\"\r\n   },\r\n   \"devDependencies\": {\r\n"
+        },
+        {
+          "date": 1669638406413,
+          "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,6 @@\n     \"prettier\": \"2.7.1\",\r\n     \"tailwindcss\": \"^3.0.24\",\r\n     \"typescript\": \"^4.6.4\",\r\n     \"vite\": \"^3.0.0\"\r\n-  },\r\n-  \"msw\": {\r\n-    \"workerDirectory\": \".\"\r\n   }\r\n }\r\n"
+        },
+        {
+          "date": 1669638781773,
+          "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,11 +23,15 @@\n     \"autoprefixer\": \"^10.4.4\",\r\n     \"cypress\": \"^10.0.0\",\r\n     \"eslint\": \"^8.21.0\",\r\n     \"eslint-plugin-react\": \"^7.30.1\",\r\n+    \"msw\": \"^0.49.1\",\r\n     \"postcss\": \"^8.4.12\",\r\n     \"prettier\": \"2.7.1\",\r\n     \"tailwindcss\": \"^3.0.24\",\r\n     \"typescript\": \"^4.6.4\",\r\n     \"vite\": \"^3.0.0\"\r\n+  },\r\n+  \"msw\": {\r\n+    \"workerDirectory\": \".\"\r\n   }\r\n }\r\n"
         }
-    ]
+      ],
+      "date": 1669635453353,
+      "name": "Commit-0",
+      "content": "{\r\n  \"name\": \"front\",\r\n  \"private\": true,\r\n  \"version\": \"0.0.0\",\r\n  \"scripts\": {\r\n    \"dev\": \"vite\",\r\n    \"build\": \"tsc && vite build\",\r\n    \"preview\": \"vite preview\",\r\n    \"format\": \"prettier --write .\",\r\n    \"lint\": \"eslint --cache --cache-location ./node_modules/.cache/eslint .\"\r\n  },\r\n  \"dependencies\": {\r\n    \"msw\": \"^0.44.2\",\r\n    \"react\": \"^18.0.0\",\r\n    \"react-dom\": \"^18.0.0\"\r\n  },\r\n  \"devDependencies\": {\r\n    \"@types/react\": \"^18.0.15\",\r\n    \"@types/react-dom\": \"^18.0.6\",\r\n    \"@typescript-eslint/eslint-plugin\": \"^5.32.0\",\r\n    \"@typescript-eslint/parser\": \"^5.32.0\",\r\n    \"@vitejs/plugin-react\": \"^2.0.0\",\r\n    \"autoprefixer\": \"^10.4.4\",\r\n    \"cypress\": \"^10.0.0\",\r\n    \"eslint\": \"^8.21.0\",\r\n    \"eslint-plugin-react\": \"^7.30.1\",\r\n    \"postcss\": \"^8.4.12\",\r\n    \"prettier\": \"2.7.1\",\r\n    \"tailwindcss\": \"^3.0.24\",\r\n    \"typescript\": \"^4.6.4\",\r\n    \"vite\": \"^3.0.0\"\r\n  },\r\n  \"msw\": {\r\n    \"workerDirectory\": \".\"\r\n  }\r\n}\r\n"
+    }
+  ]
 }

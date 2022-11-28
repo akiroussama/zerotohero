@@ -1,0 +1,18 @@
+{
+  "sourceFile": "src/mocks.ts",
+  "activeCommit": 0,
+  "commits": [
+    {
+      "activePatchIndex": 0,
+      "patches": [
+        {
+          "date": 1669638702871,
+          "content": "Index: \n===================================================================\n--- \n+++ \n"
+        }
+      ],
+      "date": 1669638702871,
+      "name": "Commit-0",
+      "content": "import { rest, setupWorker } from \"msw\";\r\n\r\nexport const handlers = [\r\n\trest.post<{ username: string; password: string }>(\r\n\t\t\"/auth\",\r\n\t\t(req, res, ctx) => {\r\n\t\t\tconst { username, password } = req.body;\r\n\t\t\tif (username === \"testuser\" && password === \"testpassword\") {\r\n\t\t\t\treturn res(ctx.status(200), ctx.json({ message: \"Authenticated\" }));\r\n\t\t\t} else {\r\n\t\t\t\treturn res(\r\n\t\t\t\t\tctx.status(401),\r\n\t\t\t\t\tctx.json({ message: \"Bad username or password\" })\r\n\t\t\t\t);\r\n\t\t\t}\r\n\t\t}\r\n\t),\r\n];\r\n\r\nexport const worker = setupWorker(...handlers);\r\n"
+    }
+  ]
+}
